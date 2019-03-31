@@ -1,0 +1,17 @@
+.flex {
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    display: -webkit-box;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .flex-1 {
+    width: 100%;
+    -webkit-box-flex: 1;
+    flex: 1;
+  }
