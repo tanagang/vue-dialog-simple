@@ -42,4 +42,4 @@
 ```
 ***
 github链接
-[链接名称](https://github.com/tanagag/npm-publish/tree/master/vue-dialog-simple)
+[链接名称](https://github.com/tanagag/vue-dialog-simple)
