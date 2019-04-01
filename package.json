@@ -1,6 +1,6 @@
 {
   "name": "vue-dialog-simple",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "基于vue开箱即用的全局弹窗组件，小巧灵活易用，包括loading，toast，confirm",
   "main": "index.js",
   "scripts": {
