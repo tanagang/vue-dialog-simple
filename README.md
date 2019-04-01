@@ -1,5 +1,5 @@
 基于vue开箱即用的全局弹窗组件，小巧灵活易用，包括loading，toast，confirm
-### 使用方法
+### 使用方法.
 ```js
     首先安装：npm install vue-dialog-simple -S
     //main.js
