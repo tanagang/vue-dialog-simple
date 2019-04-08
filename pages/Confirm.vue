@@ -107,6 +107,7 @@ export default {
 };
 </script>
 <style scoped>
+ @import '../css/style.css';
 .bounce-enter-active {
   animation: bounce-in 0.1s;
 }
