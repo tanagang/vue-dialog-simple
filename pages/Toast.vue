@@ -1,3 +1,5 @@
+
+
 <template>
   <div>
     <div class="mask" v-show="false"></div>
@@ -72,15 +74,15 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
+  z-index: 8;
+  width: 100%;
+  height: 100%;
   display: table;
-	width: 100%;
-	height:100%;
 }
 .loading {
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
 }
 .loading i {
   font-style: normal;
@@ -91,9 +93,9 @@ export default {
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   display: block;
-	background: rgba(40, 40, 40, 0.8);
-	max-width: 600px;
-	width:65%;
+  background: rgba(40, 40, 40, 0.8);
+  max-width: 600px;
+  width: 65%;
   color: #fff;
   font-size: 14px;
   padding: 5px 16px;
