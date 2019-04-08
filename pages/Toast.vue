@@ -87,15 +87,10 @@ export default {
 .loading i {
   font-style: normal;
   font-weight: normal;
-  position: fixed;
-  left: 50%;
-  top: 45%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  display: block;
   background: rgba(40, 40, 40, 0.8);
-  max-width: 600px;
-  width: 65%;
+  line-height: 1.6;
+  max-width: 65%;
+  min-width:50px;
   color: #fff;
   font-size: 14px;
   padding: 5px 16px;
