@@ -28,6 +28,7 @@ export default {
 };
 </script>
 <style scoped>
+@import '../css/style.css';
 @keyframes rotate-loading {
   0% {
     transform: rotate(0);
