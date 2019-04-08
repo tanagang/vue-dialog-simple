@@ -1,7 +1,7 @@
 import LoadingComponent from './pages/Loading.vue'
 import ToastComponent from './pages/Toast.vue'
 import ConfirmComponent from './pages/Confirm.vue'
-import '../css/style.css';
+import './css/style.css';
 
 const Loading = {
 	install:function(Vue,options){
