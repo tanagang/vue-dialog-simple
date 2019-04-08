@@ -5,6 +5,17 @@ import './css/style.css'
 
 const Loading = {
 	install:function(Vue,options){
+		// if(options){
+		// 	let arr =  Object.keys(options)
+		// 	let arrText = Object.values(options)
+		// 	for(var i = 0;i < arr.length; i++){
+		// 		LoadingComponent.props[arr[i]].default = arrText[i]
+		// 	}
+		// }
+		//options传参方式
+		//import Loading2 from './components/loading/index.js'
+		//Vue.use(Loading2,{msg:"测试loading",size:2})
+
 		let toastTpl = Vue.extend(LoadingComponent) // 创建vue构造器
 		let $vm = new toastTpl();//实例化vue实例
 		document.body.appendChild($vm.$mount().$el);
