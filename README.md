@@ -21,13 +21,22 @@
                 text:'请输入用户名',//显示toast的信息
                 duration:'2000'//持续时间
             })
-
+            
+            this.$alert({
+                title:'提示',//默认标题
+                text:'知道了',//默认内容
+                btnText:'确定',//默认
+                color:'#f60',//确定的按钮的颜色
+                callback:function(){//回调函数
+                    alert('点击了确定')
+                }
+            })
+            
             this.$confirm({
                 title:'提示',//标题
                 text:'确定取消吗',//内容
                 sureText:'确定',//默认
                 cancelText:'取消',//默认
-                //defaultText:'知道了',//此值若存在，相当于Alert功能，sureText和cancelText将无效
                 color:'#f60',//确定按钮的颜色
                 callback:function(){//回调函数
                     alert('点击了确定')
