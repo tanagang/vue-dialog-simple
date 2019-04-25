@@ -8,6 +8,7 @@
         <div class="flex-1 c-container">
           <p class="c-title" v-if="title">{{title}}</p>
           <div class="c-con" v-if="text">{{text}}</div>
+          <div v-if="html" v-html="html"></div>
         </div>
         <div class="btn-confirm flex">
           <template>
@@ -33,7 +34,7 @@ export default {
     text: {
       // 提醒文字
       type: String,
-      default: "这里是提示内容"
+      default: "知道了"
     },
     html: {
       // 提醒文字
@@ -53,13 +54,7 @@ export default {
       default() {
         return function() {};
       }
-    },
-    renderHTML: {
-      type: Function,
-      default() {
-        return function() {};
-      }
-    },
+    }
   },
   methods: {
     test(){
