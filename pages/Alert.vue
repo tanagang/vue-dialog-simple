@@ -69,6 +69,7 @@ export default {
       setTimeout(() => {
         this.text = null;
         this.title = null;
+         this.html = null;
         this.callback = function() {};
       }, 500);
     }
