@@ -89,11 +89,12 @@ export default {
   font-weight: normal;
   background: rgba(40, 40, 40, 0.8);
   line-height: 1.6;
-  max-width: 65%;
-  min-width:50px;
+  max-width: 70%;
+  min-width:100px;
   color: #fff;
   font-size: 14px;
-  padding: 5px 16px;
+  padding: 8px 24px;
+  margin-top:-50px;
   text-align: center;
   text-shadow: 2px 2px 1px #000;
   border-radius: 5px;
