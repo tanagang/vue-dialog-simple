@@ -60,7 +60,9 @@ export default {
   justify-content: center;
 }
 .loading .flex span {
-  padding: 10px 16px;
+  padding: 10px 18px;
+  min-width:40px;
+  display: inline-block;
   text-align: center;
   color: #fff;
   background: rgba(40, 40, 40, 0.8);

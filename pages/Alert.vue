@@ -6,13 +6,13 @@
     <transition-group name="bounce" tag="div">
       <div class="confirm-dialog" key="2" v-show="show">
         <div class="flex-1 c-container">
-          <p class="c-title" v-if="title">{{title}}</p>
-          <div class="c-con" v-if="text">{{text}}</div>
+          <p class="c-title"  :style="{color:titleColor}"  v-if="title">{{title}}</p>
+          <div class="c-con" :style="{color:textColor}"  v-if="text">{{text}}</div>
           <div v-if="html" v-html="html"></div>
         </div>
         <div class="btn-confirm flex">
           <template>
-            <span class="flex-1" :style="{color:color}" @click.stop="sureFunc()">{{btnText}}</span>
+            <span class="flex-1" :style="{color:sureColor}" @click.stop="sureFunc()">{{sureText}}</span>
           </template>
         </div>
       </div>
@@ -29,23 +29,31 @@ export default {
     },
     title: {
       type: String,
-      default: "提示"
+      default: ""
     },
     text: {
       // 提醒文字
       type: String,
-      default: "知道了"
+      default: ""
     },
     html: {
       // 提醒文字
       type: String,
       default: ""
     },
-    btnText: {
+    titleColor:{
+      type: String,
+      default: "#333"
+    },
+    textColor:{
+      type: String,
+      default: "#999"
+    },
+    sureText: {
       type: String,
       default: "确定"
     },
-    color: {
+    sureColor: {
       type: String,
       default: "#F9940E"
     },
@@ -57,9 +65,7 @@ export default {
     }
   },
   methods: {
-    test(){
-      alert(1)
-    },
+    
     sureFunc() {
       this.callback();
       this.show = false;
@@ -67,10 +73,17 @@ export default {
     clearData() {
       //清除上一次进入时所保留的值
       setTimeout(() => {
-        this.text = null;
-        this.title = null;
-         this.html = null;
-        this.callback = function() {};
+        this.title = ""
+        this.text = ""
+       
+        this.html = ""
+        this.titleColor = '#F9940E'
+        this.textColor = "#999"
+
+        this.sureText = "确定"
+        this.sureColor = "#F9940E"
+
+        this.callback = function() {}
       }, 500);
     }
   },
@@ -124,7 +137,7 @@ export default {
   position: fixed;
   display: table;
   z-index: 5000;
-  width: 80%;
+  width: 70%;
   max-width: 300px;
   top: 0;
   right: 0;
@@ -142,7 +155,7 @@ export default {
 .c-container .c-title {
   font-size: 16px;
   padding-bottom: 5px;
-  margin: 0 15px;
+  margin: 5px 15px 0 15px;
 }
 .c-container .c-con {
   font-size: 14px;

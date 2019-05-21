@@ -8,17 +8,12 @@
     <transition-group name="bounce" tag="div">
       <div class="confirm-dialog" key="2" v-show="show">
         <div class="flex-1 c-container">
-          <p class="c-title" v-if="title">{{title}}</p>
-          <div class="c-con" v-if="text">{{text}}</div>
+          <p class="c-title" :style="{color:titleColor}" v-if="title">{{title}}</p>
+          <div class="c-con" :style="{color:textColor}" v-if="text">{{text}}</div>
         </div>
         <div class="btn-confirm flex">
-          <template v-if="defaultText">
-            <p  :style="{color:color}" @click="sureFunc()">{{defaultText}}</p>
-          </template>
-          <template v-else>
-            <span class="flex-1" :style="{color:cancelColor}" @click.stop="cancelFunc()">{{cancelText}}</span>
-            <span class="flex-1" :style="{color:color}" @click.stop="sureFunc()">{{sureText}}</span>
-          </template>
+          <span class="flex-1" :style="{color:cancelColor}" @click.stop="cancelFunc()">{{cancelText}}</span>
+          <span class="flex-1" :style="{color:sureColor}" @click.stop="sureFunc()">{{sureText}}</span>
         </div>
       </div>
     </transition-group>
@@ -35,7 +30,7 @@ export default {
     },
     title: {
       type: String,
-      default: "提示"
+      default: ""
     },
     text: {
       // 提醒文字
@@ -50,17 +45,21 @@ export default {
       type: String,
       default: "确定"
     },
+    sureColor: {
+      type: String,
+      default: "#F9940E"
+    },
     cancelColor:{
       type: String,
       default: "#999"
     },
-    color: {
+    titleColor:{
       type: String,
-      default: "#F9940E"
+      default: "#333"
     },
-    defaultText: {
+    textColor:{
       type: String,
-      default: ""
+      default: "#999"
     },
     callback: {
       type: Function,
@@ -87,13 +86,22 @@ export default {
     clearData() {
       //清除上一次进入时所保留的值
       setTimeout(() => {
-        this.text = null;
-        this.title = null;
-        this.defaultText = null;
-        this.cancelText = "取消";
-        this.sureText = "确定";
+
+        this.title = ""
+        this.text = ""
+        
+        this.cancelText = "取消"
+        this.sureText = "确定"
+
+        this.titleColor = '#F9940E'
+        this.textColor = "#999"
+        
+        this.sureColor = '#F9940E'
+        this.cancelColor = "#999"
+
         this.callback = function() {};
         this.cancel = function() {};
+
       }, 500);
     }
   },
@@ -147,7 +155,7 @@ export default {
   position: fixed;
   display: table;
   z-index: 5000;
-  width: 80%;
+  width: 70%;
   max-width: 300px;
   top: 0;
   right: 0;

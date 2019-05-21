@@ -106,8 +106,8 @@ export default {
 }
 .slide-enter,
 .slide-leave-to {
-  -webkit-transform: translateY(-10px);
-  transform: translateY(-10px);
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
   opacity: 0;
 }
 </style>

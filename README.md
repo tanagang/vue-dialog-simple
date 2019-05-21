@@ -1,7 +1,10 @@
-基于vue开箱即用的全局弹窗组件，小巧灵活易用，包括loading，toast，confirm
+基于vue开箱即用的全局弹窗组件，小巧灵活易用，包括loading，toast，confirm，alert  
+下图gif可能有卡顿，[图片原地址](https://file.40017.cn/tcyp/tz/dialog.gif)  
+
+  ![](https://file.40017.cn/tcyp/tz/dialog.gif)
 ### 使用方法.
 ```js
-    首先安装：npm install vue-dialog-simple -S
+    首先在项目中安装：npm install vue-dialog-simple -S
     //main.js
     import {Loading,Toast,Confirm} from 'vue-dialog-simple'
     Vue.use(Loading)
@@ -13,39 +16,54 @@
     </template>
     <script>
     export default {
-        mounted(){
-            this.$loading.show('努力加载中')//loading显示，默认参数'加载中'
-            this.$loading.hide()//loading消失
-
-            this.$toast({
-                text:'请输入用户名',//显示toast的信息
-                duration:'2000'//持续时间
-            })
-            
-            this.$alert({
-                title:'提示',//默认标题
-                text:'知道了',//默认内容
-                btnText:'确定',//默认
-                color:'#f60',//确定的按钮的颜色
-                callback:function(){//回调函数
-                    alert('点击了确定')
-                }
-            })
-            
-            this.$confirm({
-                title:'提示',//标题
-                text:'确定取消吗',//内容
-                sureText:'确定',//默认
-                cancelText:'取消',//默认
-                color:'#f60',//确定按钮的颜色
-                callback:function(){//回调函数
-                    alert('点击了确定')
-                },
-                cancel:function(){
-                    alert('您取消了操作')
-                }
-            })
-        },
+        methods:{
+            toast(){
+                this.$toast({
+                    text:'请输入用户名',
+                    callback:()=>{
+                        console.log('哈哈，我是toast后的回调')
+                    }
+                })
+                //如果不需要回调的情况下可以简写：this.$toast('请输入用户名')
+            },
+            confirm(){
+                this.$confirm({
+                    title:'友情提示',
+                    text:'你确定此操作吗',
+                    titleColor:'#333',//重置title颜色(默认)
+                    textColor:'#999',//重置text颜色(默认)
+                    sureText:'确定',//(默认)
+                    cancelText:'取消',//(默认)
+                    sureColor:'#f60',//重置sureText颜色(默认)
+                    cancelColor:'#999',//重置cancelText颜色(默认)
+                    callback:()=>{
+                        console.log('你点击了confirm的确定')
+                    },
+                    cancel:()=>{
+                        console.log('你点击了confirm的取消')
+                    }
+                })
+            },
+            alert(){
+                this.$alert({
+                    title:'友情提示',
+                    text:'你确定此操作吗',
+                    titleColor:'#333',//重置title颜色(默认)
+                    textColor:'#999',//重置text颜色(默认)
+                    sureText:'确定',//(默认)
+                    sureColor:'#f60',//(默认)
+                    callback:()=>{
+                        console.log('你点击了alert的确定')
+                    }
+                })
+            },
+            loadingShow(){
+                this.$loading.show('加载中')//默认“加载中”
+            },
+            loadingHide(){
+                this.$loading.hide()
+            }
+        }
     }
     </script>
 ```
