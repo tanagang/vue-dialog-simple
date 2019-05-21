@@ -37,13 +37,21 @@ export default {
       type: String,
       default: ""
     },
-    cancelText: {
+    titleColor:{
       type: String,
-      default: "取消"
+      default: "#333"
+    },
+    textColor:{
+      type: String,
+      default: "#999"
     },
     sureText: {
       type: String,
       default: "确定"
+    },
+    cancelText: {
+      type: String,
+      default: "取消"
     },
     sureColor: {
       type: String,
@@ -53,14 +61,7 @@ export default {
       type: String,
       default: "#999"
     },
-    titleColor:{
-      type: String,
-      default: "#333"
-    },
-    textColor:{
-      type: String,
-      default: "#999"
-    },
+    
     callback: {
       type: Function,
       default() {
