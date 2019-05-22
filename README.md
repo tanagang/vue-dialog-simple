@@ -1,8 +1,5 @@
  基于vue开箱即用的全局弹窗组件，小巧灵活易用，包括loading，toast，confirm，alert  
  下图gif可能有卡顿，[图片原地址](https://file.40017.cn/tcyp/tz/dialog.gif)  
- ```diff
-+路过来个star吧
-```
 
   ![](https://file.40017.cn/tcyp/tz/dialog.gif)
   
