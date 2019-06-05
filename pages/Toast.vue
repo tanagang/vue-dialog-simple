@@ -1,8 +1,6 @@
 
-
 <template>
   <div>
-    <div class="mask" v-show="false"></div>
     <transition name="slide">
       <div class="wrap" v-show="show">
         <div class="loading flex">
@@ -14,6 +12,7 @@
 </template>
 <script>
 //this.$toast({text:'abc',callback:function(){alert('我是回调函数')}});调用示例
+var clr;
 export default {
   props: {
     show: {
@@ -52,36 +51,31 @@ export default {
   },
   methods: {
     autoClose() {
-      var clr = setTimeout(() => {
+      if (clr) {//如果手速过快，即把上一次的timer清除
+       clearTimeout(clr)
+      }
+      setTimeout(()=>{
         this.show = false;
         this.callback();
-        clearTimeout(clr);
-      }, this.duration);
+      },this.duration)
     }
   }
 };
 </script>
 <style scoped>
-.mask {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background: transparent;
-  width: 100%;
-  height: 100%;
-}
 .wrap {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom:0;
   z-index: 8;
-  width: 100%;
-  height: 100%;
+  width:100%;
+  margin:auto;
   display: table;
 }
 .loading {
-  width: 100%;
-  height: 100%;
+  width:100%;
   justify-content: center;
 }
 .loading i {
@@ -94,8 +88,8 @@ export default {
   color: #fff;
   font-size: 14px;
   padding: 8px 24px;
-  margin-top:-50px;
   text-align: center;
+  margin-top:-50px;
   text-shadow: 2px 2px 1px #000;
   border-radius: 5px;
 }
@@ -106,8 +100,8 @@ export default {
 }
 .slide-enter,
 .slide-leave-to {
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
   opacity: 0;
 }
 </style>
