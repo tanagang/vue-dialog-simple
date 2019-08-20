@@ -3,7 +3,7 @@ import ToastComponent from './pages/Toast.vue'
 import ConfirmComponent from './pages/Confirm.vue'
 import AlertComponent from './pages/Alert.vue'
 import './css/style.css';
-const Loading = {
+var Loading = {
 	install:function(Vue,options){
 		// if(options){
 		// 	let arr =  Object.keys(options)
@@ -36,7 +36,7 @@ const Loading = {
 	}
 }
 //this.$toast({text:'aaa',duration:2000,callback:function(){alert('我是回调函数')}})调用方法
-const Toast = {
+var Toast = {
 	install:function(Vue,options){
 		let toastTpl = Vue.extend(ToastComponent) // 创建vue构造器
 		let $vm = new toastTpl();//实例化vue实例
@@ -69,7 +69,7 @@ const Toast = {
 	}
 }
 //使用方法：this.$comfirm({text:'aaa',duration:2000,callback:function(){alert('我是回调函数')}})
-const Confirm = {
+var Confirm = {
 	install:function(Vue,options){
 		let comfirmTpl = Vue.extend(ConfirmComponent) // 创建vue构造器
 		let $vm = new comfirmTpl();//实例化vue实例
@@ -94,7 +94,7 @@ const Confirm = {
 	}
 }
 //使用方法：this.$comfirm({text:'aaa',duration:2000,callback:function(){alert('我是回调函数')}})
-const Alert = {
+var Alert = {
 	install:function(Vue,options){
 		let comfirmTpl = Vue.extend(AlertComponent) // 创建vue构造器
 		let $vm = new comfirmTpl();//实例化vue实例
