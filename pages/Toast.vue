@@ -84,10 +84,10 @@ export default {
   background: rgba(40, 40, 40, 0.8);
   line-height: 1.6;
   max-width: 70%;
-  min-width:100px;
+  min-width:80px;
   color: #fff;
   font-size: 14px;
-  padding: 8px 24px;
+  padding: 6px 24px;
   text-align: center;
   margin-top:-50px;
   text-shadow: 2px 2px 1px #000;
