@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <transition name="slide">
@@ -81,27 +80,27 @@ export default {
 .loading i {
   font-style: normal;
   font-weight: normal;
-  background: rgba(40, 40, 40, 0.8);
+  background: rgba(40, 40, 40, 0.72);
   line-height: 1.6;
   max-width: 70%;
-  min-width:100px;
+  min-width:80px;
   color: #fff;
   font-size: 14px;
   padding: 8px 24px;
   text-align: center;
   margin-top:-50px;
   text-shadow: 2px 2px 1px #000;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 .slide-enter-active,
 .slide-leave-active {
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
+  -webkit-transition: all 0.12s ease;
+  transition: all 0.12s ease;
 }
 .slide-enter,
 .slide-leave-to {
-  -webkit-transform: translateY(-10px);
-  transform: translateY(-10px);
+  -webkit-transform: translateY(-6px);
+  transform: translateY(-6px);
   opacity: 0;
 }
 </style>
