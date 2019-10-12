@@ -55,7 +55,7 @@ export default {
     },
     sureColor: {
       type: String,
-      default: "#F9940E"
+      default: "#1c75ff"
     },
     cancelColor:{
       type: String,
@@ -94,10 +94,10 @@ export default {
         this.cancelText = "取消"
         this.sureText = "确定"
 
-        this.titleColor = '#F9940E'
+        this.titleColor = '#333'
         this.textColor = "#999"
         
-        this.sureColor = '#F9940E'
+        this.sureColor = '#1c75ff'
         this.cancelColor = "#999"
 
         this.callback = function() {};
