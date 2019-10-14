@@ -29,7 +29,7 @@ var Loading = {
 			$vm.show = true // 显示
 		}
 		Vue.prototype.$hideLoading = function() {
-			$vm.show = false // 显示
+			$vm.show = false // 隐藏
 		}
 	}
 }
