@@ -19,19 +19,17 @@ var Loading = {
 		let toastTpl = Vue.extend(LoadingComponent) // 创建vue构造器
 		let $vm = new toastTpl();//实例化vue实例
 		document.body.appendChild($vm.$mount().$el);
-		Vue.prototype.$loading = {//在Vue原型上添加方法，以全局调用
-		  show(options) { // 控制toast显示的方法
-		   if (typeof options === 'string') { // 对参数进行判断
-		    $vm.text = options // 传入props
-		   }
-		   else if (typeof options === 'object') {
-		    Object.assign($vm, options) // 合并参数与实例
-		   }
-		   $vm.show = true // 显示toast
-		  },
-		  hide() { // 控制toast隐藏的方法
-		   $vm.show = false
-		  }
+		Vue.prototype.$showLoading = function(options) {//在Vue原型上添加方法，以全局调用
+			if (typeof options === 'string') { // 对参数进行判断
+				$vm.text = options // 传入props
+			}
+			else if (typeof options === 'object') {
+				Object.assign($vm, options) // 合并参数与实例
+			}
+			$vm.show = true // 显示
+		}
+		Vue.prototype.$hideLoading = function() {
+			$vm.show = false // 显示
 		}
 	}
 }
