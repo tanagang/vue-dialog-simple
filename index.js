@@ -3,8 +3,8 @@ import ToastComponent from './pages/Toast.vue'
 import ConfirmComponent from './pages/Confirm.vue'
 import AlertComponent from './pages/Alert.vue'
 import './css/style.css';
-var Loading = {
-	install:function(Vue,options){
+const Loading = {
+	install:function(Vue,opt){
 		// if(options){
 		// 	let arr =  Object.keys(options)
 		// 	let arrText = Object.values(options)
@@ -34,17 +34,17 @@ var Loading = {
 	}
 }
 //this.$toast({text:'aaa',duration:2000,callback:function(){alert('我是回调函数')}})调用方法
-var Toast = {
-	install:function(Vue,options){
+const Toast = {
+	install:function(Vue,opt){
 		let toastTpl = Vue.extend(ToastComponent) // 创建vue构造器
 		let $vm = new toastTpl();//实例化vue实例
 		document.body.appendChild($vm.$mount().$el);
 		Vue.prototype.$toast = function(options){
 		   if (typeof options === 'string') { // 对参数进行判断
+			Object.assign($vm,opt)
 		    $vm.text = options // 传入props
-		   }
-		   else if (typeof options === 'object') {
-		    Object.assign($vm, options) // 合并参数与实例
+		   } else {
+		    Object.assign($vm,opt,options) // 合并参数与实例
 		   }
 		   $vm.show = true
 		}
@@ -67,8 +67,8 @@ var Toast = {
 	}
 }
 //使用方法：this.$comfirm({text:'aaa',duration:2000,callback:function(){alert('我是回调函数')}})
-var Confirm = {
-	install:function(Vue,options){
+const Confirm = {
+	install:function(Vue,opt){
 		let comfirmTpl = Vue.extend(ConfirmComponent) // 创建vue构造器
 		let $vm = new comfirmTpl();//实例化vue实例
 		document.body.appendChild($vm.$mount().$el);
@@ -79,10 +79,10 @@ var Confirm = {
 		 })
 		Vue.prototype.$confirm = function(options){
 		   if (typeof options === 'string') { // 对参数进行判断
+			Object.assign($vm,opt)
 		    $vm.text = options // 传入props
-		   }
-		   else if (typeof options === 'object') {
-		    Object.assign($vm, options) // 合并参数与实例
+		   }else {
+		    Object.assign($vm,opt, options) // 合并参数与实例
 		   }
 		   $vm.show = true;
 		}
@@ -92,8 +92,8 @@ var Confirm = {
 	}
 }
 //使用方法：this.$comfirm({text:'aaa',duration:2000,callback:function(){alert('我是回调函数')}})
-var Alert = {
-	install:function(Vue,options){
+const Alert = {
+	install:function(Vue,opt){//opt是main.js中use中的参数
 		let comfirmTpl = Vue.extend(AlertComponent) // 创建vue构造器
 		let $vm = new comfirmTpl();//实例化vue实例
 		document.body.appendChild($vm.$mount().$el);
@@ -103,13 +103,13 @@ var Alert = {
 		  e.preventDefault()
 		 })
 		Vue.prototype.$alert = function(options){
-		   if (typeof options === 'string') { // 对参数进行判断
-		    $vm.text = options // 传入props
-		   }
-		   else if (typeof options === 'object') {
-		    Object.assign($vm, options) // 合并参数与实例
-		   }
-		   $vm.show = true;
+			if (typeof options === 'string') { // 对参数进行判断
+				Object.assign($vm,opt)
+				$vm.text = options // 传入props
+			}else{
+				Object.assign($vm,opt,options) // 合并参数与实例
+			}
+			$vm.show = true;
 		}
 		// Vue.component('elem', {
         //     render: function(createElement) {
@@ -126,3 +126,4 @@ var Alert = {
 }
 
 export  {Loading,Toast,Confirm,Alert}
+
