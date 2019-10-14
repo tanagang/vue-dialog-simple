@@ -37,11 +37,11 @@ export default {
       type: String,
       default: ""
     },
-    titleColor:{
+    titleColor: {
       type: String,
       default: "#333"
     },
-    textColor:{
+    textColor: {
       type: String,
       default: "#999"
     },
@@ -57,11 +57,11 @@ export default {
       type: String,
       default: "#1c75ff"
     },
-    cancelColor:{
+    cancelColor: {
       type: String,
       default: "#999"
     },
-    
+
     callback: {
       type: Function,
       default() {
@@ -87,22 +87,20 @@ export default {
     clearData() {
       //清除上一次进入时所保留的值
       setTimeout(() => {
+        this.title = "";
+        this.text = "";
 
-        this.title = ""
-        this.text = ""
-        
-        this.cancelText = "取消"
-        this.sureText = "确定"
+        this.cancelText = "取消";
+        this.sureText = "确定";
 
-        this.titleColor = '#333'
-        this.textColor = "#999"
-        
-        this.sureColor = '#1c75ff'
-        this.cancelColor = "#999"
+        this.titleColor = "#333";
+        this.textColor = "#999";
+
+        this.sureColor = "#1c75ff";
+        this.cancelColor = "#999";
 
         this.callback = function() {};
         this.cancel = function() {};
-
       }, 500);
     }
   },

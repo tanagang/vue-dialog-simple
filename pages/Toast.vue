@@ -50,13 +50,14 @@ export default {
   },
   methods: {
     autoClose() {
-      if (clr) {//如果手速过快，即把上一次的timer清除
-       clearTimeout(clr)
+      if (clr) {
+        //如果手速过快，即把上一次的timer清除
+        clearTimeout(clr);
       }
-      setTimeout(()=>{
+      setTimeout(() => {
         this.show = false;
         this.callback();
-      },this.duration)
+      }, this.duration);
     }
   }
 };
@@ -67,14 +68,14 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  bottom:0;
+  bottom: 0;
   z-index: 8;
-  width:100%;
-  margin:auto;
+  width: 100%;
+  margin: auto;
   display: table;
 }
 .loading {
-  width:100%;
+  width: 100%;
   justify-content: center;
 }
 .loading i {
@@ -83,12 +84,12 @@ export default {
   background: rgba(40, 40, 40, 0.72);
   line-height: 1.6;
   max-width: 70%;
-  min-width:80px;
+  min-width: 80px;
   color: #fff;
   font-size: 14px;
   padding: 8px 24px;
   text-align: center;
-  margin-top:-50px;
+  margin-top: -50px;
   text-shadow: 2px 2px 1px #000;
   border-radius: 4px;
 }

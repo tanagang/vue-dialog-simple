@@ -41,11 +41,11 @@ export default {
       type: String,
       default: ""
     },
-    titleColor:{
+    titleColor: {
       type: String,
       default: "#333"
     },
-    textColor:{
+    textColor: {
       type: String,
       default: "#999"
     },
@@ -65,7 +65,6 @@ export default {
     }
   },
   methods: {
-    
     sureFunc() {
       this.callback();
       this.show = false;
@@ -73,17 +72,17 @@ export default {
     clearData() {
       //清除上一次进入时所保留的值
       setTimeout(() => {
-        this.title = ""
-        this.text = ""
-       
-        this.html = ""
-        this.titleColor = '#F9940E'
-        this.textColor = "#999"
+        this.title = "";
+        this.text = "";
 
-        this.sureText = "确定"
-        this.sureColor = "#F9940E"
+        this.html = "";
+        this.titleColor = "#F9940E";
+        this.textColor = "#999";
 
-        this.callback = function() {}
+        this.sureText = "确定";
+        this.sureColor = "#F9940E";
+
+        this.callback = function() {};
       }, 500);
     }
   },
@@ -94,7 +93,7 @@ export default {
       }
     }
   }
-}
+};
 </script>
 <style scoped>
 .bounce-enter-active {
