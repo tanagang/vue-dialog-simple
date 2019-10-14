@@ -112,8 +112,15 @@
 ### loading参数 
  this.$showLoading('xxx')  
  
- this.$hideLoading()  
+ this.$hideLoading()
+
+### 全局设置样式 
+ 可以在main.js中use时统一设置，比如:
+ 
+ Vue.use(Alert,{sureColor:'red',textColor:'green'})
   
 ***
+
+
 github链接
 [链接名称](https://github.com/tanagag/vue-dialog-simple)
