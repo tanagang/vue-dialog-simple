@@ -64,10 +64,10 @@
                 })
             },
             loadingShow(){
-                this.$loading.show('加载中')//默认“加载中”
+                this.$showLoading('加载中')//默认“加载中”
             },
             loadingHide(){
-                this.$loading.hide()
+                this.$hideLoading()
             }
         }
     }
@@ -110,9 +110,9 @@
 | callback | none | `Function` | 确定的回调 | 
 
 ### loading参数 
- this.$loading.show('xxx')  
+ this.$showLoading('xxx')  
  
- this.$loading.hide()  
+ this.$hideLoading()  
   
 ***
 github链接
