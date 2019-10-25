@@ -95,13 +95,13 @@ export default {
 }
 .slide-enter-active,
 .slide-leave-active {
-  -webkit-transition: all 0.12s ease;
-  transition: all 0.12s ease;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 .slide-enter,
 .slide-leave-to {
-  -webkit-transform: translateY(-6px);
-  transform: translateY(-6px);
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
   opacity: 0;
 }
 </style>
