@@ -3,7 +3,7 @@ import ToastComponent from './pages/Toast.vue'
 import ConfirmComponent from './pages/Confirm.vue'
 import AlertComponent from './pages/Alert.vue'
 import './css/style.css';
-const Loading = {
+var Loading = {
 	install: function (Vue, opt) {
 		// if(options){
 		// 	let arr =  Object.keys(options)
@@ -16,8 +16,8 @@ const Loading = {
 		//import Loading2 from './components/loading/index.js'
 		//Vue.use(Loading2,{msg:"测试loading",size:2})
 
-		let toastTpl = Vue.extend(LoadingComponent) // 创建vue构造器
-		let $vm = new toastTpl(); //实例化vue实例
+		var toastTpl = Vue.extend(LoadingComponent) // 创建vue构造器
+		var $vm = new toastTpl(); //实例化vue实例
 		document.body.appendChild($vm.$mount().$el);
 		Vue.prototype.$showLoading = function (options) { //在Vue原型上添加方法，以全局调用
 			if (typeof options === 'string') { // 对参数进行判断
@@ -34,10 +34,10 @@ const Loading = {
 	}
 }
 //this.$toast({text:'aaa',duration:2000,callback:function(){alert('我是回调函数')}})调用方法
-const Toast = {
+var Toast = {
 	install: function (Vue, opt) {
-		let toastTpl = Vue.extend(ToastComponent) // 创建vue构造器
-		let $vm = new toastTpl(); //实例化vue实例
+		var toastTpl = Vue.extend(ToastComponent) // 创建vue构造器
+		var $vm = new toastTpl(); //实例化vue实例
 		document.body.appendChild($vm.$mount().$el);
 		Vue.prototype.$toast = function (options) {
 			if (typeof options === 'string') { // 对参数进行判断
@@ -51,10 +51,10 @@ const Toast = {
 	}
 }
 //使用方法：this.$comfirm({text:'aaa',duration:2000,callback:function(){alert('我是回调函数')}})
-const Confirm = {
+var Confirm = {
 	install: function (Vue, opt) {
-		let comfirmTpl = Vue.extend(ConfirmComponent) // 创建vue构造器
-		let $vm = new comfirmTpl(); //实例化vue实例
+		var comfirmTpl = Vue.extend(ConfirmComponent) // 创建vue构造器
+		var $vm = new comfirmTpl(); //实例化vue实例
 		document.body.appendChild($vm.$mount().$el);
 		// 阻止遮罩滑动
 		document.querySelector('#vueConfirm').addEventListener('touchmove', function (e) {
@@ -76,10 +76,10 @@ const Confirm = {
 	}
 }
 //使用方法：this.$comfirm({text:'aaa',duration:2000,callback:function(){alert('我是回调函数')}})
-const Alert = {
+var Alert = {
 	install: function (Vue, opt) { //opt是main.js中use中的参数
-		let comfirmTpl = Vue.extend(AlertComponent) // 创建vue构造器
-		let $vm = new comfirmTpl(); //实例化vue实例
+		var comfirmTpl = Vue.extend(AlertComponent) // 创建vue构造器
+		var $vm = new comfirmTpl(); //实例化vue实例
 		document.body.appendChild($vm.$mount().$el);
 		// 阻止遮罩滑动
 		document.querySelector('#vueAlert').addEventListener('touchmove', function (e) {
