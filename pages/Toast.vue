@@ -54,7 +54,7 @@ export default {
         //如果手速过快，即把上一次的timer清除
         clearTimeout(clr);
       }
-      setTimeout(() => {
+      clr = setTimeout(() => {
         this.show = false;
         this.callback();
       }, this.duration);
@@ -90,7 +90,6 @@ export default {
   padding: 8px 24px;
   text-align: center;
   margin-top: -50px;
-  text-shadow: 2px 2px 1px #000;
   border-radius: 4px;
 }
 .slide-enter-active,
