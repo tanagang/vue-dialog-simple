@@ -81,7 +81,7 @@ export default {
 .loading i {
   font-style: normal;
   font-weight: normal;
-  background: rgba(40, 40, 40, 0.8);
+  background: rgba(40, 40, 40, 0.72);
   line-height: 1.6;
   max-width: 70%;
   min-width: 80px;
