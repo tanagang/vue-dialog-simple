@@ -5,9 +5,9 @@
     </transition-group>
     <transition-group name="bounce" tag="div">
       <div class="confirm-dialog" key="2" v-show="show">
-        <div class="flex-1 c-container">
+        <div class="flex-1 flex c-container">
           <p class="c-title"  :style="{color:titleColor}"  v-if="title">{{title}}</p>
-          <div class="c-con" :style="{color:textColor}"  v-if="text">{{text}}</div>
+          <div class="c-text" :style="{color:textColor}"  v-if="text">{{text}}</div>
           <div v-if="html" v-html="html"></div>
         </div>
         <div class="btn-confirm flex">
@@ -41,11 +41,11 @@ export default {
       type: String,
       default: ""
     },
-    titleColor: {
+    titleColor:{
       type: String,
       default: "#333"
     },
-    textColor: {
+    textColor:{
       type: String,
       default: "#999"
     },
@@ -55,7 +55,7 @@ export default {
     },
     sureColor: {
       type: String,
-      default: "#F9940E"
+      default: "#1c75ff"
     },
     callback: {
       type: Function,
@@ -65,6 +65,7 @@ export default {
     }
   },
   methods: {
+    
     sureFunc() {
       this.callback();
       this.show = false;
@@ -72,17 +73,17 @@ export default {
     clearData() {
       //清除上一次进入时所保留的值
       setTimeout(() => {
-        this.title = "";
-        this.text = "";
+        this.title = ""
+        this.text = ""
+       
+        this.html = ""
+        this.titleColor = '#333'
+        this.textColor = "#999"
 
-        this.html = "";
-        this.titleColor = "#F9940E";
-        this.textColor = "#999";
+        this.sureText = "确定"
+        this.sureColor = "#1c75ff"
 
-        this.sureText = "确定";
-        this.sureColor = "#F9940E";
-
-        this.callback = function() {};
+        this.callback = function() {}
       }, 500);
     }
   },
@@ -93,14 +94,26 @@ export default {
       }
     }
   }
-};
+}
 </script>
 <style scoped>
 .bounce-enter-active {
+  -webkit-animation: bounce-in 0.1s;
   animation: bounce-in 0.1s;
 }
 .bounce-leave-active {
+  -webkit-animation: bounce-in 0.1s reverse;
   animation: bounce-in 0.1s reverse;
+}
+@-webkit-keyframes bounce-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 @keyframes bounce-in {
   0% {
@@ -115,6 +128,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
+  -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
 .fade-enter,
@@ -149,18 +163,23 @@ export default {
   overflow: hidden;
 }
 .c-container {
-  padding: 15px 0;
+  padding:20px 0;
+  min-height:50px;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
 }
 .c-container .c-title {
+  line-height: 1.4;
   font-size: 16px;
-  padding-bottom: 5px;
-  margin: 5px 15px 0 15px;
+  margin: 0 15px;
 }
-.c-container .c-con {
+.c-container .c-text {
   font-size: 14px;
   color: #999;
-  line-height: 1.6;
+  line-height: 1.4;
   margin: 0 15px;
+  margin-top:10px;
 }
 .btn-confirm {
   text-align: center;
