@@ -70,7 +70,7 @@ var Confirm = {
 			}
 			$vm.show = true;
 		}
-		Vue.prototype.$confirmHide = function (options) {
+		Vue.prototype.$hideConfirm = function (options) {
 			$vm.show = false
 		}
 	}
@@ -94,6 +94,9 @@ var Alert = {
 				Object.assign($vm, opt, options) // 合并参数与实例
 			}
 			$vm.show = true;
+		}
+		Vue.prototype.$hideAlert = function (options) {
+			$vm.show = false
 		}
 	}
 }
