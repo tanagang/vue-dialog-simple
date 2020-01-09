@@ -49,6 +49,8 @@
                         console.log('你点击了confirm的取消')
                     }
                 })
+                //js执行隐藏
+                //this.$hideConfirm()
             },
             alert(){
                 this.$alert({
@@ -62,6 +64,8 @@
                         console.log('你点击了alert的确定')
                     }
                 })
+                //js执行隐藏
+                //this.$hideAlert()
             },
             loadingShow(){
                 this.$showLoading('加载中')//默认“加载中”
