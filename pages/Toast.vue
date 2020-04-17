@@ -38,7 +38,7 @@ export default {
   watch: {
     show() {
       if (!this.show) {
-        this.duration = 1500;
+        this.duration = 2000;
         this.callback = function() {};
       } else {
         this.autoClose();
