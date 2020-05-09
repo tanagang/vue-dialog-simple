@@ -68,7 +68,7 @@
                 //this.$hideAlert()
             },
             loadingShow(){
-                this.$showLoading('加载中')//默认“加载中”
+                this.$loading('加载中')//默认“加载中”
             },
             loadingHide(){
                 this.$hideLoading()
@@ -114,7 +114,7 @@
 | callback | none | `Function` | 确定的回调 | 
 
 ### loading参数 
- this.$showLoading('xxx')  
+ this.$loading('xxx')  
  
  this.$hideLoading()
 

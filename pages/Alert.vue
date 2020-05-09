@@ -84,7 +84,7 @@ export default {
         this.sureColor = "#1c75ff"
 
         this.callback = function() {}
-      }, 500);
+      }, 200);
     }
   },
   watch: {

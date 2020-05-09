@@ -19,7 +19,7 @@ var Loading = {
 		var toastTpl = Vue.extend(LoadingComponent) // 创建vue构造器
 		var $vm = new toastTpl(); //实例化vue实例
 		document.body.appendChild($vm.$mount().$el);
-		Vue.prototype.$showLoading = function (options) { //在Vue原型上添加方法，以全局调用
+		Vue.prototype.$loading = function (options) { //在Vue原型上添加方法，以全局调用
 			if (typeof options === 'string') { // 对参数进行判断
 				Object.assign($vm, opt) // 合并参数与实例
 				$vm.text = options // 传入props

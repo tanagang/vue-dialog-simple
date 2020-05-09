@@ -103,7 +103,7 @@ export default {
         this.callback = function() {};
         this.cancel = function() {};
 
-      }, 500);
+      }, 200);
     }
   },
   watch: {
