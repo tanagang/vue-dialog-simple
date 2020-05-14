@@ -91,6 +91,7 @@ export default {
   text-align: center;
   margin-top: -50px;
   border-radius: 4px;
+  word-break:break-all
 }
 .slide-enter-active,
 .slide-leave-active {

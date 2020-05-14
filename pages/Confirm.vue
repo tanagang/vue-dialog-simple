@@ -192,6 +192,7 @@ export default {
   line-height: 1.4;
   font-size: 16px;
   margin: 0 15px;
+  word-break:break-all
 }
 .c-container .c-text {
   font-size: 14px;
@@ -199,6 +200,7 @@ export default {
   line-height: 1.4;
   margin: 0 15px;
   margin-top:10px;
+  word-break:break-all
 }
 .btn-confirm {
   text-align: center;
