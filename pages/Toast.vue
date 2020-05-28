@@ -26,7 +26,7 @@ export default {
     },
     duration: {
       type: Number,
-      default: 1500
+      default: 2000
     },
     callback: {
       type: Function,
@@ -83,25 +83,29 @@ export default {
   font-weight: normal;
   background: rgba(40, 40, 40, 0.8);
   line-height: 1.6;
-  max-width: 70%;
-  min-width: 80px;
+  max-width: 85%;
+  min-width: 100px;
   color: #fff;
   font-size: 14px;
-  padding: 8px 24px;
+  padding: 8px 20px;
   text-align: center;
   margin-top: -50px;
   border-radius: 4px;
   word-break:break-all
 }
-.slide-enter-active,
+/* .slide-enter-active,
 .slide-leave-active {
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+} */
+.slide-enter{
+  -webkit-transform: translateY(8px);
+  transform: translateY(8px);
+  opacity: 0.3;
 }
-.slide-enter,
 .slide-leave-to {
-  -webkit-transform: translateY(-2px);
-  transform: translateY(-2px);
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
   opacity: 0;
 }
 </style>
