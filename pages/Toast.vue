@@ -93,15 +93,15 @@ export default {
   border-radius: 4px;
   word-break:break-all
 }
-/* .slide-enter-active,
+.slide-enter-active,
 .slide-leave-active {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-} */
+}
 .slide-enter{
   -webkit-transform: translateY(8px);
   transform: translateY(8px);
-  opacity: 0.3;
+  opacity: 0;
 }
 .slide-leave-to {
   -webkit-transform: translateY(-8px);
